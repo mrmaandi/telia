@@ -1,7 +1,8 @@
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class main {
+public class CalculatorProgram {
     public static void main(String[] args) {
         try {
             Scanner reader = new Scanner(System.in);
@@ -24,9 +25,14 @@ public class main {
             reader.close();
             System.out.println(hour + ", " + minute);
             CalculateDegrees calculator = new CalculateDegrees(hour, minute);
+            try {
+                calculator.calculateDifference();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             System.out.println(calculator.toString());
         } catch (InputMismatchException e) {
-            System.out.println("Vale sisend.");
+            System.out.println("Vale sisend. Programm seiskub.");
         }
     }
 }
