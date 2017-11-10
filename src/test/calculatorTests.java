@@ -2,7 +2,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
+import static junit.framework.TestCase.assertEquals;
+
 
 public class calculatorTests {
 
@@ -10,42 +11,42 @@ public class calculatorTests {
     public void nintyDegreeTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(0, 15);
         calculator.calculateDifference();
-        assertEquals(83, calculator.getDifference());
+        assertEquals(82.5, calculator.getDifference());
     }
 
     @Test
     public void oneEightyDegreeTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(0, 30);
         calculator.calculateDifference();
-        assertEquals(165, calculator.getDifference());
+        assertEquals(165.0, calculator.getDifference());
     }
 
     @Test
     public void zeroDegreeTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(0, 0);
         calculator.calculateDifference();
-        assertEquals(0, calculator.getDifference());
+        assertEquals(0.0, calculator.getDifference());
     }
 
     @Test
     public void twoSeventyDegreeTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(0, 45);
         calculator.calculateDifference();
-        assertEquals(248, calculator.getDifference());
+        assertEquals(247.5, calculator.getDifference());
     }
 
     @Test
     public void threeSixtyDegreeTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(0, 60);
         calculator.calculateDifference();
-        assertEquals(330, calculator.getDifference());
+        assertEquals(330.0, calculator.getDifference());
     }
 
     @Test
     public void zeroDegreeBothHandsMaximumTest() throws IOException {
         CalculateDegrees calculator = new CalculateDegrees(12, 60);
         calculator.calculateDifference();
-        assertEquals(30, calculator.getDifference());
+        assertEquals(30.0, calculator.getDifference());
     }
 
     @Test (expected = IOException.class)
